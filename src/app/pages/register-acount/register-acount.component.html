@@ -1,0 +1,98 @@
+<nb-layout>
+  <nb-layout-column>
+    <div id="main" class="registerAcount">
+      <div class="page-wrapper  p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+          <div class="card card-2">
+            <div class="card-heading"></div>
+            <form #f="ngForm" [formGroup]="submitForm" (ngSubmit)="submit(errElement)">
+              <div class="card-body">
+                <h2 class="title">{{"register_an_acount" | translate}}</h2>
+                <div class="form-errors" #errElement></div>
+                <div class="form">
+                  <input
+                  name="firstName" 
+                  formControlName="firstName"
+                  id="firstName" 
+                  type="text" placeholder="firstName">
+
+                  <input
+                  required 
+                  name="lastName" 
+                  formControlName="lastName" 
+                  id="lastName" 
+                  type="text" placeholder="nom">
+                </div>
+                <div class="form form2">
+                  <h6>Gender :</h6>
+                  <nb-radio-group
+                  status="info"
+                  name="gender"
+                  formControlName="gender">
+                    <nb-radio value="male" ng-reflect-checked="true">male</nb-radio>
+                    <nb-radio value="female">female</nb-radio>
+                    <nb-radio value="other">other</nb-radio>
+                  </nb-radio-group>                  
+                </div>
+
+                <div class="form">
+                  <input
+                    name="birtDate" 
+                    formControlName="birtDate"  
+                    nbInput class="daterangepicker birthdate" placeholder="BirthDate" [nbDatepicker]="formpicker">
+                  <nb-datepicker #formpicker format="MM.dd.yyyy"></nb-datepicker>
+                </div>
+                <div class="form">
+                    <ngx-intl-tel-input 
+                      [preferredCountries]="preferredCountries"
+                      [enableAutoCountrySelect]="false" 
+                      [enablePlaceholder]="true" 
+                      [searchCountryFlag]="true"
+                      [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                      [selectFirstCountry]="false" 
+                      [selectedCountryISO]="CountryISO.Switzerland"
+                      [maxLength]="15" 
+                      [tooltipField]="TooltipLabel.Name" 
+                      [phoneValidation]="true" 
+                      [separateDialCode]="separateDialCode"
+                      name="phone"
+                      formControlName="phone"
+                      >
+                    </ngx-intl-tel-input>
+                  <input 
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    name="email"
+                    formControlName="email" 
+                    type="text" class="email" placeholder="Your Email">
+                </div>
+
+                <div class="form">
+                  <input
+                    name="password" 
+                    formControlName="password" 
+                    type="password" placeholder="your Password">
+
+                  <input
+                    name="repeatePassword" 
+                    formControlName="repeatePassword"
+                    type="password" placeholder="repeate your password">
+                </div>
+                <div class="form">
+                  <nb-checkbox status="info"
+                  name="iAgree" 
+                  formControlName="iAgree" 
+                  >I Agree the <a href="" style="color: red;">general conditions</a> of sale and to the privacy policy.</nb-checkbox>
+                  
+                </div>
+                <div class="form form2">
+                  <button nbButton status="info" type="submit">Register</button>
+                  <button nbButton (click)="returnToHomePage()">cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>

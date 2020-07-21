@@ -1,0 +1,68 @@
+<div id="main">
+  <div class="shopping-cart">
+    <!-- Title -->
+    <div class="card-header">
+      <div class="title">
+        <h1>Your cart</h1>
+        <p>Migros GVA, Avenue trembley 14, 1209 Genève,Suisse</p>
+      </div>
+      <div class="card-content">
+      </div>
+      <div class="header-baner">
+      </div>
+      <div class="card-remove" (click)="goToHome()">
+        <i class="fa fa-remove"></i>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+
+      <div *ngFor="let item of card" class="item">
+        
+        <div class="buttons">
+          <span class="delete-btn" (click)="removeItem(item.ProductId)"></span>
+          <span class="like-btn" [class.is-active]="item.productLiked" (click)="likeItem(item.ProductId)"></span>
+        </div>
+
+        <div class="image">
+          <img src="{{item.productImage}}" alt="">
+        </div>
+
+
+        <div class="description">
+          <span>{{item.productName}}</span>
+          <span>{{item.productDescription}}</span>
+          <span>{{item.productWeigth}}</span>
+        </div>
+
+        <div class="quantity">
+          <button class="minus-btn" type="button" name="button" (click)="descreaseQTY(item.ProductId)">
+            <img src="assets/icons/minus.svg" alt="">
+          </button>
+          <input type="text" name="name" value="{{item.productQty}}">
+          <button class="plus-btn" type="button" name="button" (click)="increaseQTY(item.ProductId)">
+            <img src="assets/icons/plus.svg" alt="">
+          </button>
+        </div>
+        <div class="total-price">{{item.productPrice * item.productQty | currency:'CHF '}}</div>
+      </div>
+
+    </div>
+
+    <div class="card-footer">
+
+      <div class="row">
+        <div class="col col-md-5">
+          <table>
+            <tr><td><strong>SUBTOTAL</strong></td><td>{{totalPrice() | currency:'CHF '}}</td></tr>
+            <tr><td><strong>DELIVERY FEES</strong></td><td>CHF 9.95</td></tr>
+          </table>
+        </div>
+        <div class="col col-md-7 confirm_my_card">
+          <button>confirm my cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

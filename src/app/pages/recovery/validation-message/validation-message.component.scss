@@ -1,0 +1,71 @@
+.body{
+  background: #ececec;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: block;
+ }
+ #registerContainer{
+  position: relative;
+  width: 30em;
+  margin: 5em auto;
+  padding: 2em;
+  background: white;
+  border-radius: .5em;
+  box-shadow: 1px 0px 7px 2px #d6d6d6;
+  .logo {
+    background-image: url('../../../../assets/images/logo.png');
+    height: 10em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 2em;
+  }
+
+  > p {
+    text-align: center;
+    font-size: smaller;
+    color: var(--yellow);
+    margin: 1em 0;
+    padding: 1em;
+    
+  }
+  > h5 {
+    text-align: center;
+    font-size: 11pt;
+    span {
+      color: var(--primary);
+    }
+  }
+
+ }
+
+a.returnToHome{
+  border: 2px solid #228438;
+  background: white;
+  font-size: small;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-weight: bold;
+  color: gray;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+a.returnToHome:hover {
+  text-decoration: none;
+}
+
+
+@media (max-width: 599px) { 
+
+  .body {
+    height: initial;
+    width: initial;
+  }
+}

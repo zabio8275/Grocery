@@ -1,0 +1,23 @@
+{
+  "firstName": "prénom",
+  "is_required": "est requit",
+  "lastName": "nom",
+  "sign_up_form_error_header" : "il y a quelque error sur la formulaire input",
+  "should_not_start_with": "ne doit pas commencer par des",
+  "should_be_more_than": "doit etre plus de",
+  "characters": "chifres",
+  "gender": "gender",
+  "birtDate":"date de naissance",
+  "number": "nombres",
+  "phone_number": "numéro de téléphone",
+  "phone": "numéro de téléphone",
+  "enter": "inserer",
+  "valide" : "un validé",
+  "email": "address mail",
+  "password": "mot de passe",
+  "repeate_your_password" : "repeter votre mot de passe",
+  "password_does_not_math":"le mot de passe ne match pas",
+  "agree_terms_and_condition": "agreez les terms et conditions",
+  "register_an_acount": "enregistré un compte"
+
+}

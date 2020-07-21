@@ -1,0 +1,55 @@
+<nb-layout>
+  <nb-layout-column>
+    <div id="login_container">
+      <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm">
+                      <div class="errors" #errors></div>
+
+                      <h4>We are <span>pronto.ch</span></h4>
+                      <p>Welcome back! Log in to your account to view new products</p>
+                      <div class="floating-label">
+                        <input placeholder="Email" type="email" name="email" formControlName="email" id="email" autocomplete="off">
+                        <label for="email">Email:</label>
+                        <div class="icon">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                      </div>
+                      <div class="floating-label">
+                        <input placeholder="Password" type="password" name="password" formControlName="password" id="password" autocomplete="off">
+                        <label for="password">Password:</label>
+                        <div class="icon">
+                          <i class="fa fa-lock"></i>
+                        </div>
+                      </div>
+                      <div class="floating-label login_button">
+                        <p #lostPassword>Don't have an account ? <a class="noAccount" href="/#/registerAcount"> Sign up here</a></p>
+                        <button class="submit" (click)="submit(errors, lostPassword)">Log in</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </nb-layout-column>
+</nb-layout>
+
+
+<!-- <h4 *ngIf="error">{{error}}</h4>
+<form (ngSubmit)="submit()">
+  <div class="form-group col-3">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control" [(ngModel)]="username" />
+  </div>
+  <div class="form-group col-3">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" [(ngModel)]="password" />
+  </div>
+  <div class="form-group col-3">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form> -->

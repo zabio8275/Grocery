@@ -5,4 +5,57 @@
 @include nb-install() {
   @include nb-theme-global();
 };
+
+@import "~bootstrap/dist/css/bootstrap.css";
 /* You can add global styles to this file, and also import other style files */
+
+
+
+
+
+
+
+// banner language select element
+.select-button {
+  min-width: 0 !important;
+}
+//singup page css reset 
+.registerAcount{
+  input#phone {
+    height: 3em;
+    border: 1px solid rgb(182,157,230);
+    width: 100% !important;
+    padding-left: 6.0em;
+  }
+  input#phone:focus {
+    box-shadow: unset !important;
+  }
+  ngx-intl-tel-input {
+    width: 45%;
+  }
+  .intl-tel-input.separate-dial-code .selected-flag {
+    width: unset !important;
+    box-sizing: border-box;
+  }
+}
+
+
+
+// -- login container 
+
+#login_container {  
+  .errors {
+    width: 100%;
+    .alert {
+      border: 1px solid #E91E63;
+      strong {
+        color: #E91E63;
+        display: block;
+      }
+    }
+  }
+}
+// -- login container 
+
+
+

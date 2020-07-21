@@ -1,0 +1,48 @@
+<div class="body">
+  <div id="registerContainer">
+    <a href="/#/home" class="returnToHome">x</a>
+    <div class="logo"></div>
+    <p>Create your account</p>
+    <div class="error">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <h5>Authentication Failed</h5>
+        <p>Email or password is incorrect</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    </div>
+
+    <div class="fields">
+      <input type="email" placeholder="Your email">
+    </div>
+    <div class="fields">
+      <input type="password" placeholder="Your Password">
+    </div>
+
+    <div class="fields inputPhone">
+
+      <div class="countryInput" #contryInput (click)="showCountryCode(countryList, $event)">+41</div>
+      <div class="countryList" #countryList>
+        <ul>
+          <li (click)="showCountryCodeUpdate(contryInput, $event)">Suisse <span>+41</span></li>
+          <li (click)="showCountryCodeUpdate(contryInput, $event)">France <span>+30</span></li>
+        </ul>
+      </div>
+
+      <div class="inputValue">
+        <input type="phone" placeholder="Your Number">
+      </div>
+    </div>
+
+    <div class="fields">
+      <button class="register">Create your account</button>
+    </div>
+
+    <div class="fields flex">
+      <p><a href="/#/connection">Already have an Account ?</a></p>
+    </div>
+  </div>
+</div>
+
+

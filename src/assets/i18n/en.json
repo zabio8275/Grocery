@@ -1,0 +1,23 @@
+{
+  "firstName": "firstName",
+  "is_required": "is required",
+  "LastName": "lastName",
+  "sign_up_form_error_header" : "There was some problem with form input",
+  "should_not_start_with": "shouldn't start with",
+  "should_be_more_than": "should be more than",
+  "characters": "characters",
+  "gender": "gender",
+  "birtDate":"birth date",
+  "number": "number",
+  "phone_number": "phone numbber",
+  "phone": "phone numbber",
+  "enter": "Enter",
+  "valide" : "valide",
+  "email": "email address",
+  "password": "password",
+  "repeate_your_password" : "repeate your password",
+  "password_does_not_math":"password doesn't math",
+  "agree_terms_and_condition": "agree term and conditions",
+  "register_an_acount": "register un account"
+
+}

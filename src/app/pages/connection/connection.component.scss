@@ -1,0 +1,138 @@
+.body{
+  background: #ececec;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: block;
+ }
+ #registerContainer{
+  position: relative;
+  width: 30em;
+  margin: 5em auto;
+  padding: 2em 2em 0 2em;
+  background: white;
+  border-radius: .5em;
+  box-shadow: 1px 0px 7px 2px #d6d6d6;
+  .logo {
+    background-image: url('../../../assets/images/logo.png');
+    height: 10em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 2em;
+  }
+
+  > p {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .fields > input, button.submit {
+    width: 100%;
+    height: calc(1.33em + 2rem + 2px);
+    padding: 1rem 1.062rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #4e5d78;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d9dfe7;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 1em 0;
+  }
+
+  .fields > input:focus {
+    border-color: var(--success);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(53, 172, 128, 0.29);
+  }
+
+  .fields > button {
+    line-height: normal;
+    border: none;
+    background: #228438;
+    color: white;
+    outline: none;
+  }
+
+ }
+
+ .alert-danger {
+  background: white;
+  border: 1px solid#fe3f3e;
+  color: black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  h5 {
+    color: #fe3f3e;
+    font-size: medium;
+  }
+  p {
+    color: #6a6c6d;
+    margin: 0;
+  }
+}
+
+button.close {
+  padding: 0;
+  font-size: large;
+  position: absolute;
+  margin: .5em;
+}
+
+button.close:focus{
+  outline: none;
+  span {
+    outline: none;
+  }
+}
+a.returnToHome{
+  border: 2px solid #228438;
+  background: white;
+  font-size: small;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-weight: bold;
+  color: gray;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+a.returnToHome:hover {
+  text-decoration: none;
+}
+
+
+div.flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  h5 {
+    a {
+      color: #228438;
+      font-size: medium;
+    }
+  }
+  p {
+    a {
+      color: #fe3f3e;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+  }
+}
+
+@media (max-width: 599px) { 
+
+  .body {
+    height: initial;
+    width: initial;
+  }
+}

@@ -1,0 +1,261 @@
+
+<nb-layout>
+  <nb-layout-header>
+    
+    <div id="logo">
+    <div>
+      <!-- <nb-icon icon="menu-outline" (click)="toggle()"></nb-icon> -->
+    </div>
+    <div id="shope-logo">
+    </div>
+    
+    </div>
+    <!-- modal-zoomin,rotate-layout,modal-move,curtain,column-curtain,modal-drop,modal-half -->
+    <nb-search type="rotate-layout"></nb-search>
+
+    <div *ngIf="this.auth.loggedIn">
+      <nb-actions size="small">
+        <nb-action 
+          icon="shopping-cart-outline"
+          [badgeText]="calculLocalCardItems()"
+          badgeStatus="danger"
+          (click)="goToCard()"
+          >
+        </nb-action>
+      </nb-actions>
+    </div>
+        
+ 
+  <nb-actions size="tiny">
+    <nb-action>
+      <nb-select status="primary" size="tiny" filled shape="round" [(selected)]="defaultLanuage">
+        <nb-option value="1">EN</nb-option>
+        <nb-option value="2">FR</nb-option>
+        <nb-option value="3">DE</nb-option>
+        <nb-option value="4">IT</nb-option>
+      </nb-select>
+
+    </nb-action>
+  </nb-actions>
+    <div *ngIf="this.auth.loggedIn; else log_in">
+      <nb-user
+        name = "Account"
+        [nbContextMenu]="menuItems"
+        nbContextMenuTag="my-context-menu"
+      >
+      </nb-user>
+
+    </div>
+    <ng-template #log_in>
+      <button nbButton status="danger" size="tiny" (click)="connection()">connextion</button>
+    </ng-template>
+  
+  </nb-layout-header>
+
+  <!-- <nb-sidebar  [containerFixed]="false">      
+    
+
+  </nb-sidebar> -->
+
+  
+  <nb-layout-column class="home_layout">
+
+    <div id="main_home">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-sm-2 col-md-2">
+            <div class="zcategory">
+              <div class="zcategory-header">
+                <ul>
+                  <li><a (click)="getAllProducts()">All category</a></li>
+                </ul>
+              </div>
+              <div class="zcategory-list">
+                <ul>
+                  <li><a href="">Restaurant <img src="zicon-medium" alt="" src="../../../assets/svgIcons/food.svg"></a></li>
+                  <li><a href="">Pizzaria <img src="zicon-medium" alt="" src="../../../assets/svgIcons/pizza.svg"></a></li>
+                  <li><a href="">Fast food <img src="zicon-medium" alt="" src="../../../assets/svgIcons/hamburger.svg"></a></li>
+                  <li><a href="">bakery <img src="zicon-medium" alt="" src="../../../assets/svgIcons/cake-pop.svg"></a></li>
+                </ul>
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="col-sm-10 col-md-10">
+            <div class="banner">
+            </div>
+          </div>
+        </div>
+  
+        <!-- second row  -->
+  
+        <div class="row">
+          <div class="col-sm-2 col-md-2"></div>
+          <div class="col-sm-10 col-md-8">
+            <div class="zrow settingBar">
+              <div class="deliveryBox">
+                <div class="deliveryAdress">
+                  <input type="text" placeholder="Delivery Address">
+                </div>
+                <div class="searchButton">
+                  <button>Find</button>
+                </div>
+              </div>
+              <div class="deliverNow">
+                deliver Now
+              </div>
+          </div>
+  
+          </div>
+        </div> 
+        
+        <!-- second row  -->
+
+
+        <!-- third row -->
+
+        <div class="products">
+          <div class="head">
+            <div class="title">
+              <h2>Special Offers</h2>
+              <span>Limited availability</span>
+            </div>
+  
+            <div class="controls">
+              <a href="">view All</a>
+              <button role="button" aria-label="Previous" class="glider-prev" id="glider-prev-2">prev</button>
+              <button role="button" aria-label="Next" class="glider-next" id="glider-next-2">next</button>
+            </div>
+          </div>
+    
+          <div class="slider">
+            <div class="glider" id="glider-double">
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+              <div>
+                <img src="https://d1ralsognjng37.cloudfront.net/8480ce7a-0a68-403c-acfa-00921d4a6826.jpeg" alt="">
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <!-- third row -->
+
+
+
+      </div>
+      
+    </div>
+
+
+      
+
+      
+
+   
+
+
+      
+      <!-- <div class="products">
+        <div *ngFor="let product of allProducts" class="cards">
+          <div class="zcontainer">
+            <div class="top">
+              <a href="">
+                <img [src]="product.imageUrls">
+              </a>
+            </div>
+            <div class="bottom" #bottom>
+
+              <div class="content">
+                <h4 class="productName">{{product.name}}</h4>
+                <p class="productDetails">{{product.weight}}</p>
+                <p class="productPrice">
+                  <strong >{{product.price | currency:'CHF '}}</strong>
+                </p>
+                  
+                <p  *ngIf="product.saleAmount !=0" class="productReduction"><strong>instead of <span class="insteadOf">{{product.price + (product.price * product.saleAmount / 100) | currency:'CHF '}}</span></strong></p>
+                <div class="controls">
+                  <div class="quantity">
+                    <button (click)="minus(unit)"><i class="fa fa-minus"></i></button>
+                    <strong> <span #unit>1</span> Unit</strong>
+                    <button (click)="addition(unit, product.productId)"><i class="fa fa-plus"></i></button>
+                  </div>
+                  <div class="add">
+                    <strong>{{calculPrice(unit, product.productPrice) | currency:'CHF '}}</strong><button (click)="addToCard(unit, product.id)">add to card</button>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+          <div class="inside">
+            <div class="icon"><i class="fa fa-info-circle"></i></div>
+            <div class="contents">
+              <table>
+                <tr>
+                  <th>Width</th>
+                  <th>Height</th>
+                </tr>
+                <tr>
+                  <td>3000mm</td>
+                  <td>4000mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+                <tr>
+                  <th>Something</th>
+                  <th>Something</th>
+                </tr>
+                <tr>
+                  <td>200mm</td>
+                  <td>200mm</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    
+      
+    
+  </nb-layout-column>
+  
+</nb-layout>
+
+
+
+
+
+
